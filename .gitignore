@@ -2,3 +2,5 @@ src/main
 target
 .idea
 *.iml
+lib/
+/out/
