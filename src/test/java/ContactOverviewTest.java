@@ -36,8 +36,6 @@ public class ContactOverviewTest {
     @Test
     public void test_Contact_arwen_piot_kan_gezien_worden_door_admin() {
         ContactsPage contactsPage = PageFactory.initElements(driver, ContactsPage.class);
-        assertTrue(contactsPage.containsBezoekWithName("arwen piot"));
-        assertTrue(contactsPage.containsBezoekWithDate("20-11-09"));
-        assertTrue(contactsPage.containsBezoekWithTime("12:12:00"));
+        assertTrue(contactsPage.containsBezoek("arwen piot","2020-11-09","12:12:00"));
     }
 }

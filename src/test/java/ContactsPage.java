@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * @author gerben
  * @author Mats
@@ -13,37 +15,15 @@ public class ContactsPage extends Page {
         super(driver);
         this.driver.get(path+"?command=Contacts");
     }
-
-    public boolean containsBezoekWithName(String name) {
-        ArrayList<WebElement> listItems=(ArrayList<WebElement>) this.driver.findElements(By.cssSelector("td"));
+    public boolean containsBezoek(String naam,String datum,String tijd){
+        ArrayList<WebElement> listItems=(ArrayList<WebElement>) driver.findElements(By.cssSelector("table tr"));
         boolean found=false;
         for (WebElement listItem:listItems) {
-            if (listItem.getText().contains(name)) {
+            if (listItem.getText().contains(naam) &&  listItem.getText().contains(datum) &&  listItem.getText().contains(tijd)) {
                 found=true;
             }
         }
         return found;
     }
 
-    public boolean containsBezoekWithDate(String date) {
-        ArrayList<WebElement> listItems=(ArrayList<WebElement>) this.driver.findElements(By.cssSelector("td"));
-        boolean found=false;
-        for (WebElement listItem:listItems) {
-            if (listItem.getText().contains(date)) {
-                found=true;
-            }
-        }
-        return found;
-    }
-
-    public boolean containsBezoekWithTime(String time) {
-        ArrayList<WebElement> listItems=(ArrayList<WebElement>) this.driver.findElements(By.cssSelector("td"));
-        boolean found=false;
-        for (WebElement listItem:listItems) {
-            if (listItem.getText().contains(time)) {
-                found=true;
-            }
-        }
-        return found;
-    }
 }
