@@ -24,7 +24,7 @@ public class ContactOverviewTest {
         System.setProperty("webdriver.chrome.driver", "C:\\semester 2\\web2\\chromedriver.exe");
         driver = new ChromeDriver();
         IndexPage indexPage = PageFactory.initElements(driver,IndexPage.class);
-        indexPage.logIn("admin.ucll.be","t");
+        indexPage.logIn("admin@ucll.be","t");
 
     }
 
